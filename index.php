@@ -9,13 +9,13 @@
     <title>Perpus K-9</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
                 <h1>LOGO</h1>
             </div>
         </div>
-    </div>
+    </div> -->
     <nav class="navbar bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -49,7 +49,7 @@
 </div>
 
 <div class="container">
-    
+
 </div>
 <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
