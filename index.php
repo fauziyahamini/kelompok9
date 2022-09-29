@@ -44,8 +44,8 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="#">About Us</a>
         <a class="nav-link" href="#">Daftar Buku</a>
-        <a class="nav-link" href="#">Login</a>
-        <i class="bi-alarm"></i>
+        <button class="btn btn-primary" type="submit">Login</button>
+        <!-- <i class="box-arrow-in-right"></i> -->
       </div>
     </div>
   </div>
