@@ -8,9 +8,17 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(45deg, rgba(81, 238, 88, 0.8), rgba(81, 238, 219, 0.8), rgba(81, 161, 238, 0.8));
-  background-size: 400%;
-  animation: bg-login 8s ease infinite;
+}
+
+.bg-primary {
+  background-color: #3489eb !important;
+}
+
+.container {
+  width: 70%;
+}
+.row {
+  min-height: 80vh;
 }
 
 .login {
@@ -21,71 +29,62 @@
   color: #1bdd96;
 }
 
-.form {
-  background: rgba(0, 0, 0, 0.3);
-  width: 400px;
-  text-align: center;
-  position: relative;
-  box-shadow: 2px white;
-  border-radius: 10px;
-}
-
 .form-label {
   position: absolute;
-  color: #fff;
-  top: 25%;
-  left: 55px;
+  top: 30%;
+  left: 30px;
+  font-size: 14px;
   transition: 0.4s;
 }
 
-.fas {
+.bi {
   position: absolute;
-  color: #fff;
   font-size: 20px;
-  top: 29%;
-  left: 32px;
+  top: 30%;
+  left: 2px;
   transition: 0.4s;
 }
 
-.form-control-sm {
-  width: 90%;
+.fs-7 {
+  font-size: 14px;
+}
+
+.fs-7 a {
+  text-decoration: none;
+}
+
+.text-gray {
+  color: #888a8c !important;
+}
+
+.form-control-s {
+  width: 100%;
   background: rgba(0, 0, 0, 0);
   outline: none;
   border: none;
   height: 40px;
+  font-size: 14px;
   padding: 0 0 0 28px;
-  border-bottom: 2px solid #fff;
-  color: #fff;
+  border-bottom: 2px solid #888a8c;
   transition: 0.4s;
 }
 
-.mb-3 input:focus ~ label,
-.mb-3 input:valid ~ label {
-  top: -5px;
+.mbe input:focus ~ label,
+.mbe input:valid ~ label {
+  top: -10px;
+  color: #3489eb;
 }
 
-.mb-3 input:focus ~ .fas,
-.mb-3 input:valid ~ .fas {
-  color: #ffb900;
+.mbe input:focus ~ .bi,
+.mbe input:valid ~ .bi {
+  color: #3489eb;
 }
 
-.mb-3 input:focus,
-.mb-3 input:valid {
-  border-bottom: 2px solid #ffb900;
+.mbe input:focus,
+.mbe input:valid {
+  border-bottom: 2px solid #3489eb;
 }
 
 .btn:focus {
   box-shadow: 1px #48cf00;
-}
-
-@keyframes bg-login {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
