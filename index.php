@@ -16,18 +16,26 @@
             </div>
         </div>
     </div>
-
+    <nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      Bootstrap
+    </a>
+  </div>
+</nav>
+<!-- navbar -->
     <!-- carousel -->
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="img/book.jfif" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="img/book.jfif" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="img/book.jfif" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -39,5 +47,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
 </body>
 </html>
