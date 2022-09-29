@@ -19,9 +19,26 @@
     <nav class="navbar bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      <img src="img/logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
       Perpustakaan
     </a>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <!-- navbar -->
