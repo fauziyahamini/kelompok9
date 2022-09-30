@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="../css/bootstrap.rtl.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script><script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <title>Perpus K-9</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd; ">
   <div class="container">
   <img src="img/logo.png" alt="Logo" width="50" height="50" class=" align-text-top">
-    <a class="navbar-brand" href="#">PERPUSTAKAAN</a>
+    <a class="navbar-brand fw-bold" href="#">PERPUSTAKAAN</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,31 +32,54 @@
         <button class="d-flex btn btn-primary" type="submit">Login <span class="bi-box-arrow-in-right"></span></button>
 </nav>
 
-<!-- navbar -->
-    <!-- carousel -->
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img/book1.jpg" class="d-block w-100" style="height:50%;" alt="...">
+<header class="bg-primary text-white text-center" style="height:100%;">
+            <div class="container d-flex align-items-center flex-column">
+                <img class="mb-5 mt-5" style="width:20%;height:0%;" src="img/buku.png" alt="..." />
+                <h1 class="text-uppercase mb-5">Perpustakaan Kel. 9</h1>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <p class="masthead-subheading font-weight-light  mt-3 mb-5">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit tenetur, dolores optio omnis enim aspernatur odit, deleniti ducimus nihil vero id, nobis tempora beatae molestiae iure sit voluptatibus incidunt eum."</p>
+            </div>
+        </header>
+<div class="container mt-5">
+    <h2 class="text-center text-uppercase text-primary mb-0">Daftar Buku</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+  <div class="row">
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+      <img src="img/cover1.jfif" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Matahari</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="img/book.jfif" class="d-block w-100" alt="...">
     </div>
-    <div class="carousel-item">
-      <img src="img/book.jfif" class="d-block w-100" alt="...">
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+      <img src="img/cover2.jfif" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+    </div>
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+      <img src="img/cover3.jfif" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<div class="container mt-5">
 
 </div>
 <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
