@@ -12,7 +12,7 @@ include "config.php";
   <link rel="stylesheet" href="icon/bootstrap-icons.css">
 </head>
 <body class="body bg-info">
-    <div class="container">
+    <div class="container my-5">
       <div class="row">
         <div class="col-lg-6 bg-primary pt-4 text-center shadow-lg">
           <h4 class="text-white mb-4">JOIN READ AND LEARN FOR YOUR FUTURE.</h4>
@@ -48,19 +48,6 @@ include "config.php";
                 <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="P" required>
                 <label class="form-check-label fs-7" for="inlineRadio2">Female</label>
             </div>
-            <div class="mb-4 mbe">
-              <select class="form-control-s text-gray" style="position: relative;" name="id_user">
-                <option selected>Open this select menu</option>
-                <?php
-                  $squery = mysqli_query($db,"SELECT * FROM userr");
-                  while($data = mysqli_fetch_array($squery)){
-                    ?>
-                    <option value="<?= $data[0]?>"><?= strtoupper($data[1])?></option>
-                    <?php
-                  }
-                ?>
-              </select>
-            </div>
             <div class="mb-4 mbe" style="position: relative;">
               <input type="password" class="form-control-s" id="exampleInputPassword1" name="pass" required>
               <i class="bi bi-shield-lock-fill"></i>
@@ -79,11 +66,10 @@ include "config.php";
 
           <?php
             if(isset($_POST['register'])){
-              $user = $_POST['username'];
+              $user = $_POST['user'];
               $nama = $_POST['nama'];
               $alamat = $_POST['alamat'];
               $jk = $_POST['gender'];
-              $id = $_POST['id_user'];
               $pass = $_POST['pass'];
               $c_pass = $_POST['pass2'];
               if($pass != $c_pass){
@@ -95,16 +81,16 @@ include "config.php";
                 <?php
               }elseif($pass == $c_pass){
                 $sql = mysqli_query($db,"SELECT * FROM petugas WHERE username = '".$user."'");
-                $fetch = mysqli_fetch_array($sql);
+                $fetch = mysqli_fetch_assoc($sql);
                 if($fetch){
                   ?>
-                   <script>
-                  alert('Upss gagal, masukkan password dengan benar');
-                  document.location = "register.php";
-                </script>
+                    <script>
+                      alert('Upss gagal, username sudah ada. Silahkan gunakan username yang lain');
+                      document.location = "register.php";
+                    </script>
                   <?php
                 }else{
-                  $query = mysqli_query($db,"INSERT INTO petugas VALUES ('','$user','$nama','$jk','$alamat','$pass','$id')");
+                  $query = mysqli_query($db,"INSERT INTO petugas VALUES ('','$user','$nama','$jk','$alamat','$pass')");
                   header('location:login.php');
                 }
               }

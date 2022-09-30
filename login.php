@@ -34,7 +34,7 @@
               <label class="custom-control-label" for="customCheck">Remember Me</label>
             </div>
             <button type="submit" class="btn btn-primary btn-sm mb-5 rounded-pill shadow px-4 mx-auto">Login</button>
-            <div class="copyright">
+            <div class="copyright mt-5">
               <p style="font-size: 12px;">Copyright &copy; 2022, Perpustakaan K-9 | Kharisma Academy</p>
             </div>
           </form>
