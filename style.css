@@ -79,6 +79,16 @@
 .mbe input:valid ~ .bi {
   color: #3489eb;
 }
+.mbe select:focus ~ label,
+.mbe select:valid ~ label {
+  top: -10px;
+  color: #3489eb;
+}
+
+.mbe select:focus ~ .bi,
+.mbe select:valid ~ .bi {
+  color: #3489eb;
+}
 
 .mbe input:focus,
 .mbe input:valid {

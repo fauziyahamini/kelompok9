@@ -48,6 +48,19 @@ include "config.php";
                 <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="P" required>
                 <label class="form-check-label fs-7" for="inlineRadio2">Female</label>
             </div>
+            <div class="mb-4 mbe">
+              <select class="form-control-s text-gray" style="position: relative;" name="id_user">
+                <option selected>Open this select menu</option>
+                <?php
+                  $squery = mysqli_query($db,"SELECT * FROM userr");
+                  while($data = mysqli_fetch_array($squery)){
+                    ?>
+                    <option value="<?= $data[0]?>"><?= strtoupper($data[1])?></option>
+                    <?php
+                  }
+                ?>
+              </select>
+            </div>
             <div class="mb-4 mbe" style="position: relative;">
               <input type="password" class="form-control-s" id="exampleInputPassword1" name="pass" required>
               <i class="bi bi-shield-lock-fill"></i>
@@ -70,6 +83,7 @@ include "config.php";
               $nama = $_POST['nama'];
               $alamat = $_POST['alamat'];
               $jk = $_POST['gender'];
+              $id = $_POST['id_user'];
               $pass = $_POST['pass'];
               $c_pass = $_POST['pass2'];
               if($pass != $c_pass){
@@ -90,7 +104,7 @@ include "config.php";
                 </script>
                   <?php
                 }else{
-                  $query = mysqli_query($db,"INSERT INTO petugas VALUES ('','$user','$nama','$jk','$alamat','$pass')");
+                  $query = mysqli_query($db,"INSERT INTO petugas VALUES ('','$user','$nama','$jk','$alamat','$pass','$id')");
                   header('location:login.php');
                 }
               }
