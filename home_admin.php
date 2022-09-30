@@ -27,13 +27,14 @@ include ('config.php');?>
   </div>
   <div class="col">
   <button id="search" type="submit" value="Cari" class="btn btn-warning">Cari</button>
-  <button id="add" type="submit" value="add" class="btn btn-success">Tambah Buku</button>
+  <a href="add.php" class="btn btn-success">Tambah Buku</a>
+  <!-- <button id="add" type="submit" value="add" class="btn btn-success">Tambah Buku</button> -->
   </div>
 </div>
 </form>
-<form action="">
+<form action="" enctype="multipart/form-data">
 <table class="table table-striped mt-5">
-  <thead>
+  <thead class="text-center">
     <tr>
         <th scope="col">Id Buku</th>
         <th scope="col">Penulis</th>
@@ -73,7 +74,7 @@ include ('config.php');?>
         <td><?= $data['stok']?></td>
         <td >
      
-            <a href="update.php?id=<?php echo $data['id_buku'] ?>" class="btn btn-sm btn-primary">EDIT</a>
+            <a href="edit.php?id=<?php echo $data['id_buku'] ?>" class="btn btn-sm btn-primary">EDIT</a>
             <a href="delete.php?id=<?php echo $data['id_buku'] ?>" class="btn btn-sm btn-danger">HAPUS</a>
         </td>
     </tr>
