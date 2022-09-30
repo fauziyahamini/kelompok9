@@ -10,7 +10,7 @@
     <title>Perpus K-9</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd; ">
   <div class="container">
   <img src="img/logo.png" alt="Logo" width="50" height="50" class=" align-text-top">
     <a class="navbar-brand" href="#">PERPUSTAKAAN</a>
@@ -34,7 +34,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/book1.jpg" class="d-block w-100" alt="...">
+      <img src="img/book1.jpg" class="d-block w-100" style="height:50%;" alt="...">
     </div>
     <div class="carousel-item">
       <img src="img/book.jfif" class="d-block w-100" alt="...">
