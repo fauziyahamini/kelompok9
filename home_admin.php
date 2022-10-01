@@ -37,7 +37,7 @@ include ('config.php');?>
                                 <div class="sb-nav-link-icon"><span class="bi-journal-bookmark"></span></div>
                                 Data Buku
                             </a>
-                            <a class="nav-link " href="#" >
+                            <a class="nav-link " href="data_siswa.php" >
                                 <div class="sb-nav-link-icon"><span class="bi-people-fill"></span></div>
                                 Data Siswa
                             </a>
