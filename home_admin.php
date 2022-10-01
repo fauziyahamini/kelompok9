@@ -13,13 +13,13 @@ include ('config.php');?>
     <title>Document</title>
 </head>
 <body>
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Perpustakaan</a>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-3">
-                <li class="nav-item dropdown">
-                    <a class="btn btn-secondary" id="navbarDropdown" href="#" aria-expanded="false">Log Out <span class="bi-box-arrow-in-left"></span></a>
+            <ul class="navbar-nav ms-auto pe-5">
+                <li class="nav-item ms-auto">
+                    <a class="btn btn-secondary nav-link" id="navbarDropdown" href="index.php">Log Out <span class="bi-box-arrow-in-left"></span></a>
                     
                 </li>
             </ul>
@@ -41,11 +41,11 @@ include ('config.php');?>
                                 <div class="sb-nav-link-icon"><span class="bi-people-fill"></span></div>
                                 Data Siswa
                             </a>
-                            <a class="nav-link " href="#" >
+                            <a class="nav-link " href="peminjaman.php" >
                                 <div class="sb-nav-link-icon"><span class="bi-table"></span></div>
                                 Peminjaman
                             </a>
-                            <a class="nav-link " href="#" >
+                            <a class="nav-link " href="pengembalian.php" >
                                 <div class="sb-nav-link-icon"><span class="bi-table"></span></div>
                                 Pengembalian
                             </a>

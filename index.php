@@ -29,7 +29,7 @@
             <a class="nav-link active ">Daftar Buku</a>
             </li>
         </ul>
-        <button class="d-flex btn btn-primary" type="submit">Login <span class="bi-box-arrow-in-right"></span></button>
+        <a class="d-flex btn btn-primary" href="login.php">Login <span class="bi-box-arrow-in-right"></span></a>
 </nav>
 
 <header class="bg-primary text-white text-center" style="height:100%;">

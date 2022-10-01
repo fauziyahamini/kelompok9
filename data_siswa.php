@@ -52,10 +52,18 @@ if(isset($_GET['cari'])){
 
                         while ($data = mysqli_fetch_array($ambil)) {
                     ?>
-                        <tr>
+                        <tr class="text-center">
                             <td><?= $data['nis']?></td>
                             <td><?= $data['nama']?></td>
-                            <td><?= $data['jenis_kelamin']?></td>
+                            <td>
+                                <?php
+                                 if($data['jenis_kelamin'] == 'L'){
+                                    echo "Laki-Laki";
+                                 }else{
+                                    echo "Perempuan";
+                                 }
+                                ?>
+                            </td>
                             <td><?= $data['alamat']?></td>
                             <td><?= $data['nama_kelas']?></td>
                             <td >

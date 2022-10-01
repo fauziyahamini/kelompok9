@@ -30,8 +30,8 @@ include_once('home_admin.php');
     <label class="form-label">Jenis Kelamin</label>
     <select class="form-control" name="gender" >
     <option value="">--Pilih Jenis Kelamin--</option>
-    <option value="Laki-laki">Laki-laki</option>   
-    <option value="Perempuan">Perempuan</option>
+    <option value="L">Laki-laki</option>   
+    <option value="P">Perempuan</option>
     </select>
   </div>
   <div class="mb-3">

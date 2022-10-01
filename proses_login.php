@@ -10,7 +10,7 @@ include "config.php";
         $cek = mysqli_num_rows($query);
         if($cek > 0){
             $id = $sql['id_petugas'];
-            $_SESSION['id_petugas'] = $id;
+            $_SESSION['id'] = $id;
             if(isset($_POST['remember'])){
                 setcookie('nip', $sql['nip']);
             }
