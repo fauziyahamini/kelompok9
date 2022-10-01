@@ -3,6 +3,12 @@ include ('config.php');
 include ('home_admin.php');
 ?>
 
+<?php 
+if(isset($_GET['cari'])){
+	$cari = $_GET['cari'];
+	// echo "<b>Hasil pencarian : ".$cari."</b>";
+}
+?>
 <main>
     <div class="container-fluid px-4">
     <h1 class="mt-4">Daftar Siswa</h1>   
@@ -14,7 +20,7 @@ include ('home_admin.php');
                     </div>
                     <div class="col">
                     <button id="search" type="submit" value="Cari" class="btn btn-warning">Cari</button>
-                    <a href="add.php" class="btn btn-success">Tambah Siswa</a>
+                    <a href="add_siswa.php" class="btn btn-success">Tambah Siswa</a>
                     <!-- <button id="add" type="submit" value="add" class="btn btn-success">Tambah Buku</button> -->
                     </div>
                     </div>
@@ -27,6 +33,8 @@ include ('home_admin.php');
                             <th scope="col">Nama Siswa</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Alamat</th>
+                            <th scope="col">Kelas</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +45,8 @@ include ('home_admin.php');
                         
 
                         }else{
-                        $ambil = mysqli_query($db,"SELECT * from siswa");
+                        $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas");
+                        
                         
                         }
 
@@ -48,11 +57,11 @@ include ('home_admin.php');
                             <td><?= $data['nama']?></td>
                             <td><?= $data['jenis_kelamin']?></td>
                             <td><?= $data['alamat']?></td>
-                            <td><?= $data['id_kelas']?></td>
+                            <td><?= $data['nama_kelas']?></td>
                             <td >
                         
-                                <a href="edit.php?id=<?php echo $data['nis'] ?>" class="btn btn-sm btn-primary">EDIT</a>
-                                <a href="delete.php?id=<?php echo $data['nis'] ?>" class="btn btn-sm btn-danger">HAPUS</a>
+                                <a href="edit_siswa.php?id=<?php echo $data['nis'] ?>" class="btn btn-sm btn-primary">EDIT</a>
+                                <a href="delete_siswa.php?id=<?php echo $data['nis'] ?>" class="btn btn-sm btn-danger">HAPUS</a>
                             </td>
                         </tr>
                         <?php

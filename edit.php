@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+include 'home_admin.php';
 
 if(isset($_POST['update']))
 {	
@@ -48,7 +49,7 @@ if(isset($_POST['update']))
 <?php
     $id = $_GET['id'];
     
-    echo $id;
+    // echo $id;
     $result = mysqli_query($db,"SELECT * FROM buku WHERE id_buku=$id");
     $data = mysqli_fetch_assoc($result)
    
