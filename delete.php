@@ -9,5 +9,5 @@ $id = $_GET['id'];
 $result = mysqli_query($db, "DELETE FROM buku WHERE id_buku='$id'");
  
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:home_admin.php");
+header("Location:data_buku.php");
 ?>

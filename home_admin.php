@@ -29,11 +29,11 @@ include ('config.php');?>
                 <nav class="sb-sidenav accordion sb-sidenav"  style="background-color: #e3f2fd;" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="dashboard.php">
                                 <div class="sb-nav-link-icon"><span class="bi-speedometer2"></span></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link " href="#" >
+                            <a class="nav-link " href="data_buku.php" >
                                 <div class="sb-nav-link-icon"><span class="bi-journal-bookmark"></span></div>
                                 Data Buku
                             </a>
@@ -42,14 +42,13 @@ include ('config.php');?>
                                 Data Siswa
                             </a>
                             <a class="nav-link " href="#" >
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                <div class="sb-nav-link-icon"><span class="bi-table"></span></div>
                                 Peminjaman
                             </a>
                             <a class="nav-link " href="#" >
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                <div class="sb-nav-link-icon"><span class="bi-table"></span></div>
                                 Pengembalian
                             </a>
-                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -59,79 +58,13 @@ include ('config.php');?>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <!-- <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Daftar Buku</h1>
-                        
-                        <div class="container mt-5">
-<form action=" " method="GET">
-<div class="row">
-  <div class="col">
-    <input type="text" class="form-control" name ="cari" placeholder="Cari Buku" >
-  </div>
-  <div class="col">
-  <button id="search" type="submit" value="Cari" class="btn btn-warning">Cari</button>
-  <a href="add.php" class="btn btn-success">Tambah Buku</a>
-  <!-- <button id="add" type="submit" value="add" class="btn btn-success">Tambah Buku</button> -->
-  </div>
-</div>
-</form>
-<form action="" enctype="multipart/form-data">
-<table class="table table-striped mt-5">
-  <thead class="text-center">
-    <tr>
-        <th scope="col">Id Buku</th>
-        <th scope="col">Penulis</th>
-        <th scope="col">Tahun</th>
-        <th scope="col">Judul</th>
-        <th scope="col">Kota</th>
-        <th scope="col">Penerbit</th>
-        <th scope="col">Cover</th>
-        <th scope="col">Sinopsis</th>
-        <th scope="col">Stok</th>
-        <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-    if(isset($_GET['cari'])){
-      $cari = $_GET['cari'];
-      $ambil = mysqli_query($db,"SELECT * from buku where judul like '%".$cari."%' " );    
-     
-
-      }else{
-      $ambil = mysqli_query($db,"SELECT * from buku");
-      
-      }
-
-    while ($data = mysqli_fetch_array($ambil)) {
-   ?>
-    <tr>
-        <td><?= $data['id_buku']?></td>
-        <td><?= $data['penulis']?></td>
-        <td><?= $data['tahun']?></td>
-        <td><?= $data['judul']?></td>
-        <td><?= $data['kota']?></td>
-        <td><?= $data['penerbit']?></td>
-        <td><img src="cover/<?= $data['cover']?>" alt="" style="width:50px;" class="img-thumbnail"></td>
-        <td><?= $data['sinopsis']?></td>
-        <td><?= $data['stok']?></td>
-        <td >
-     
-            <a href="edit.php?id=<?php echo $data['id_buku'] ?>" class="btn btn-sm btn-primary">EDIT</a>
-            <a href="delete.php?id=<?php echo $data['id_buku'] ?>" class="btn btn-sm btn-danger">HAPUS</a>
-        </td>
-    </tr>
-    <?php
-    }?>
-  </tbody>
-</table>
-</form>
-
-</div>
+                       
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
+                    </div>
+                </main> -->
+                <!-- <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2022</div>
@@ -142,10 +75,9 @@ include ('config.php');?>
                             </div>
                         </div>
                     </div>
-                </footer>
-            </div>
-        </div>
-        <!-- tabel start -->
+                </footer> -->
+           
+     
 
 
 <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>

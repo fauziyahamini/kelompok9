@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include_once('home_admin.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +13,11 @@ include('config.php');
     <title>ADD</title>
 </head>
 <body>
-   <div class="container mt-5">
+<main>
+  <div class="container-fluid px-4">
+  <div class="container mt-5">
    <form action="" method="POST" enctype="multipart/form-data"> 
+  <h3 class="text-primary text-center">Form Tambah Buku</h3>
   <div class="mb-3">
     <label class="form-label">ID Buku</label>
     <input type="number" class="form-control" name="id_buku" placeholder="Input ID Buku">
@@ -75,7 +79,7 @@ include('config.php');
 
         //Kondisi apakah berhasil atau tidak dalam mengeksekusi query diatas
         if ($query) {
-            header("Location:home_admin.php");
+            header("Location:data_buku.php");
         }
         else {
             echo "<div class='alert alert-danger'> Data Gagal disimpan.</div>";
@@ -85,6 +89,12 @@ include('config.php');
     }
     
     ?>
+  </div>
+</main>
+
+
+</div>
+</div>
     <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
 </body>
