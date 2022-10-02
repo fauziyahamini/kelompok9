@@ -2,6 +2,37 @@
 include('config.php');
 include_once('home_admin.php');
 ?>
+
+<?php
+    if (isset($_POST['submit_buku'])) {
+        $id_buku=$_POST['id_buku'];
+        $penulis=$_POST['penulis'];
+        $tahun=$_POST['tahun'];
+        $judul=$_POST['judul'];
+        $kota=$_POST['kota'];
+        $penerbit=$_POST['penerbit'];
+        $file=$_FILES['cover']['name'];
+        $temp_name=$_FILES['cover']['tmp_name'];
+        $upload=move_uploaded_file($temp_name,"cover/".$file);
+        $sinopsis=$_POST['sinopsis'];
+        $stok=$_POST['stok'];
+        
+        $query=mysqli_query($db, "INSERT INTO buku(id_buku,penulis,tahun,judul,kota,penerbit,cover,sinopsis,stok) values ('$id_buku', '$penulis', '$tahun', '$judul','$kota', '$penerbit', '$file', '$sinopsis','$stok')");
+
+        
+
+        //Kondisi apakah berhasil atau tidak dalam mengeksekusi query diatas
+        if ($query) {
+            header("Location:data_buku.php");
+        }
+        else {
+            echo "<div class='alert alert-danger'> Data Gagal disimpan.</div>";
+
+        }
+
+    }
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,41 +85,12 @@ include_once('home_admin.php');
     <label class="form-label">Stok</label>
     <input type="number" class="form-control" name="stok" >
   </div>
-  <button type="submit" class="btn btn-primary" name="submit">ADD</button>
+  <button type="submit" class="btn btn-primary" name="submit_buku">ADD</button>
 </form>
    </div> 
    
 
-    <?php
-    if (isset($_POST['submit'])) {
-        $id_buku=$_POST['id_buku'];
-        $penulis=$_POST['penulis'];
-        $tahun=$_POST['tahun'];
-        $judul=$_POST['judul'];
-        $kota=$_POST['kota'];
-        $penerbit=$_POST['penerbit'];
-        $file=$_FILES['cover']['name'];
-        $temp_name=$_FILES['cover']['tmp_name'];
-        $upload=move_uploaded_file($temp_name,"cover/".$file);
-        $sinopsis=$_POST['sinopsis'];
-        $stok=$_POST['stok'];
-        
-        $query=mysqli_query($db, "INSERT INTO buku(id_buku,penulis,tahun,judul,kota,penerbit,cover,sinopsis,stok) values ('$id_buku', '$penulis', '$tahun', '$judul','$kota', '$penerbit', '$file', '$sinopsis','$stok')");
-
-        
-
-        //Kondisi apakah berhasil atau tidak dalam mengeksekusi query diatas
-        if ($query) {
-            header("Location:data_buku.php");
-        }
-        else {
-            echo "<div class='alert alert-danger'> Data Gagal disimpan.</div>";
-
-        }
-
-    }
     
-    ?>
   </div>
 </main>
 

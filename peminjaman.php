@@ -7,7 +7,7 @@ include "home_admin.php";
 ?>
 <main>
     <div class="container-fluid px-4">
-    <h1 class="mt-4">Daftar Siswa</h1>   
+    <h1 class="mt-4">Data Peminjam Buku Perpustakaan</h1>   
                     <div class="container mt-5">
                     <form action=" " method="GET">
                     <div class="row">
