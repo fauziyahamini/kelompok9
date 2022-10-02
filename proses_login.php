@@ -9,12 +9,12 @@ include "config.php";
         $sql = mysqli_fetch_assoc($query);
         $cek = mysqli_num_rows($query);
         if($cek > 0){
-            $id = $sql['id_petugas'];
+            $id = $sql['nip'];
             $_SESSION['id'] = $id;
             if(isset($_POST['remember'])){
                 setcookie('nip', $sql['nip']);
             }
-            header('location:home_admin.php');
+            header('location:dashboard.php');
         }else {
             echo 
             "<script>
