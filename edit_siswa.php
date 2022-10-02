@@ -30,7 +30,7 @@ if(isset($_POST['update']))
     $id = $_GET['id'];
     
     // echo $id;
-    $result = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas");
+    $result = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas WHERE nis='".$id."'");
     $data = mysqli_fetch_assoc($result)
     ?>
 
@@ -57,11 +57,11 @@ if(isset($_POST['update']))
   </div>
   <div class="mb-3">
     <label class="form-label">Jenis Kelamin</label>
-    <select class="form-control" name="gender" >
-    <!-- <option value="">--Pilih Jenis Kelamin--</option> -->
-    <option value="<?php echo $data['jenis_kelamin'];?>"><?php echo $data['jenis_kelamin'];?></option>   
-    
-    </select>
+    <br>
+    <input name="gender" type="radio" value="Laki-laki" <?php if($data['jenis_kelamin']=='Laki-laki') echo 'checked'?> 
+> Laki-Laki
+        <input name="gender" type="radio" value="Perempuan"<?php if($data['jenis_kelamin']=='Perempuan') echo 'checked'?> 
+> Perempuan
   </div>
   <div class="mb-3">
     <label class="form-label">Alamat</label>

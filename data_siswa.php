@@ -56,14 +56,8 @@ if(isset($_GET['cari'])){
                             <td><?= $data['nis']?></td>
                             <td><?= $data['nama']?></td>
                             <td>
-                                <?php
-                                 if($data['jenis_kelamin'] == 'L'){
-                                    echo "Laki-Laki";
-                                 }else{
-                                    echo "Perempuan";
-                                 }
-                                ?>
-                            </td>
+                            <?= $data['jenis_kelamin']?></td>
+                           
                             <td><?= $data['alamat']?></td>
                             <td><?= $data['nama_kelas']?></td>
                             <td >

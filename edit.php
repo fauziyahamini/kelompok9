@@ -37,7 +37,7 @@ if(isset($_POST['update']))
       $result = mysqli_query($db, "UPDATE buku SET id_buku='$id_buku',penulis='$penulis',tahun='$tahun', judul='$judul',kota='$kota',penerbit='$penerbit',sinopsis='$sinopsis', stok='$stok' WHERE id_buku=$id_buku");
 
       if ($result) {
-        header("Location: home_admin.php");
+        header("Location: data_buku.php");
       } else {
         echo "<div class='alert alert-danger'> Data Gagal diupdate.</div>";
       }
