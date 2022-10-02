@@ -17,6 +17,9 @@
 .contrainer {
   width: 70%;
 }
+.contrainer1 {
+  width: 80%;
+}
 .row {
   min-height: 80vh;
 }
@@ -96,7 +99,12 @@
 }
 
 .btn:focus {
+  border: none;
   box-shadow: 1px #48cf00;
+}
+
+.btn:active {
+  border: none;
 }
 
 .z-index {

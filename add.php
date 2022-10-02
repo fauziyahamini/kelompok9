@@ -28,7 +28,7 @@ include_once('home_admin.php');
   </div>
   <div class="mb-3">
     <label class="form-label">Tahun</label>
-    <input type="number" class="form-control" name="tahun" >
+    <input type="date" class="form-control" name="tahun" >
   </div>
   <div class="mb-3">
     <label class="form-label">Judul</label>
