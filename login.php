@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="icon/bootstrap-icons.css">
 </head>
 <body class="body bg-info">
-    <div class="container">
+    <div class="contrainer">
       <div class="row">
         <div class="col-lg-6 bg-primary py-4 text-center shadow-lg">
           <h3 class="text-white mb-4">READ AND LEARN WITH US.</h3>

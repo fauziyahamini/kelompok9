@@ -12,7 +12,7 @@ include "config.php";
   <link rel="stylesheet" href="icon/bootstrap-icons.css">
 </head>
 <body class="body bg-info">
-    <div class="container my-5">
+    <div class="contrainer my-5">
       <div class="row">
         <div class="col-lg-6 bg-primary pt-4 text-center shadow-lg">
           <h4 class="text-white mb-4">JOIN READ AND LEARN FOR YOUR FUTURE.</h4>
