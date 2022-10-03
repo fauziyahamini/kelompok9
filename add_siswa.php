@@ -30,11 +30,16 @@ include_once('home_admin.php');
     ?>
 
   <main class="mb-5">
-  <div class="container-fluid px-4 mt-5">
+  <div class="container-fluid mx-auto mt-5">
     <div class="container">
+      
     <form action="" method="POST" enctype="multipart/form-data"> 
-  <h3 class="text-primary text-center">Form Tambah Siswa</h3>
-  <div class="mb-3">
+      <div class="card mx-auto shadow-lg" style="width:50rem;">
+      <div class="card-header">
+        Form Tambah Siswa
+      </div>
+      <div class="card-body">
+      <div class="mb-3">
     <label class="form-label">NIS</label>
     <input type="number" class="form-control" name="nis" placeholder="Input NIS Siswa">
   </div>
@@ -71,7 +76,14 @@ include_once('home_admin.php');
           }?>          
     </select>
   </div>
-  <button type="submit" class="btn btn-primary" name="submit_siswa">Tambah Siswa</button>
+      </div>
+
+      <div class="card-footer">
+      <button type="submit" class="btn btn-primary" name="submit_siswa">Tambah Siswa</button>
+      </div>
+
+      </div>
+ 
 </form>
     </div>
         </div>

@@ -39,7 +39,14 @@ if(isset($_GET['cari'])){
                         </tr>
                     </thead>
                     <tbody>
+                    
                     <?php
+                        $batas=5;
+                        $halaman = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
+				        $halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;	
+ 
+				        $previous = $halaman - 1;
+				        $next = $halaman + 1;
                         if(isset($_GET['cari'])){
                         $cari = $_GET['cari'];
                         $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas  from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas where nama like '%".$cari."%' " );    
@@ -48,10 +55,15 @@ if(isset($_GET['cari'])){
                         }else{
                         $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas");
                         
-                        
+                        $jumlah_data = mysqli_num_rows($ambil);
+				        $total_halaman = ceil($jumlah_data / $batas);
+
+                        $data_siswa = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas limit $halaman_awal, $batas");
+                        $nomor = $halaman_awal+1;
+                    
                         }
 
-                        while ($data = mysqli_fetch_array($ambil)) {
+                        while ($data = mysqli_fetch_array($data_siswa)) {
                     ?>
                         <tr class="text-center">
                             <td><?= $data['nis']?></td>
@@ -79,6 +91,26 @@ if(isset($_GET['cari'])){
                     </tbody>
                     </table>
                     </form>
+
+                    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$previous'"; } ?>>Previous</a>
+    </li>
+    <?php 
+				for($x=1;$x<=$total_halaman;$x++){
+					?> 
+    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
+    <?php
+	}
+				?>	
+
+    
+    <li class="page-item">
+      <a class="page-link" <?php if($halaman < $total_halaman) { echo "href='?halaman=$next'"; } ?> >Next</a>
+    </li>
+  </ul>
+</nav>
     </div>
 </main>
 <?php include "footer.php"; ?>
