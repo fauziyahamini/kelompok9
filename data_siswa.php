@@ -41,7 +41,7 @@ if(isset($_GET['cari'])){
                     <?php
                         if(isset($_GET['cari'])){
                         $cari = $_GET['cari'];
-                        $ambil = mysqli_query($db,"SELECT * from siswa where nama like '%".$cari."%' " );    
+                        $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas  from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas where nama like '%".$cari."%' " );    
                         
 
                         }else{

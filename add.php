@@ -45,47 +45,84 @@ include_once('home_admin.php');
 </head>
 <body>
 <main>
-  <div class="container-fluid px-4">
+  <div class="container-fluid px-5">
   <div class="container mt-5">
    <form action="" method="POST" enctype="multipart/form-data"> 
-  <h3 class="text-primary text-center">Form Tambah Buku</h3>
-  <div class="mb-3">
-    <label class="form-label">ID Buku</label>
-    <input type="number" class="form-control" name="id_buku" placeholder="Input ID Buku">
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Penulis</label>
-    <input type="text" class="form-control" name="penulis" >
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Tahun</label>
-    <input type="date" class="form-control" name="tahun" >
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Judul</label>
-    <input type="text" class="form-control" name="judul" >
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Kota</label>
-    <input type="text" class="form-control" name="kota" >
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Penerbit</label>
-    <input type="text" class="form-control" name="penerbit" >
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Cover</label>
-    <input type="file" class="form-control" name="cover" >
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Sinopsis</label>
-    <input type="text" class="form-control" name="sinopsis" >
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Stok</label>
-    <input type="number" class="form-control" name="stok" >
-  </div>
-  <button type="submit" class="btn btn-primary" name="submit_buku">ADD</button>
+
+   <!--  -->
+   <div class="card  shadow">
+      <div class="card-header ">
+        Form Tambah Buku
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-2">
+              <label class="form-label">ID Buku</label>
+              <input type="number" class="form-control" name="id_buku" placeholder="Masukan ID Buku">
+              </div>
+              </div>
+            <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label">Penulis</label>
+              <input type="text" class="form-control" name="penulis" >
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+            <label class="form-label">Tahun</label>
+            <input type="number" class="form-control" name="tahun" >
+          </div>
+              </div>
+            <div class="col-md-6">
+            <div class="form-group">
+            <label class="form-label">Judul</label>
+            <input type="text" class="form-control" name="judul" >
+          </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+            <label class="form-label">Kota</label>
+            <input type="text" class="form-control" name="kota" >
+          </div>
+              </div>
+            <div class="col-md-6">
+            <div class="form-group">
+            <label class="form-label">Penerbit</label>
+            <input type="text" class="form-control" name="penerbit" >
+          </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+            <label class="form-label">Cover</label>
+            <input type="file" class="form-control" name="cover" >
+          </div>
+              </div>
+            <div class="col-md-6">
+            <div class="form-group">
+            <label class="form-label">Stok</label>
+            <input type="text" class="form-control" name="stok" >
+          </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+            <label class="form-label">Sinopsis</label>
+            <textarea class="form-control" name="sinopsis" rows="5"></textarea>
+          </div>
+      </div>
+    </div>
+    <div class="card-footer">
+       <button type="submit" name="submit_buku" class="btn btn-primary float-right">Simpan</button>
+        </div>
+               
+   </div>
 </form>
    </div> 
    
