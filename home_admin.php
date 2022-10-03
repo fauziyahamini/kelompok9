@@ -46,11 +46,11 @@ $name = mysqli_fetch_assoc($sql);
                                 Data Siswa
                             </a>
                             <a class="nav-link mb-4 " href="peminjaman.php" >
-                                <div class="sb-nav-link-icon"><span class="text-primary bi-table"></span></div>
+                                <div class="sb-nav-link-icon"><span class="text-primary bi bi-clipboard2-data"></span></div>
                                 Peminjaman
                             </a>
                             <a class="nav-link mb-4 " href="pengembalian.php" >
-                                <div class="sb-nav-link-icon"><span class="text-primary bi-table"></span></div>
+                                <div class="sb-nav-link-icon"><span class="text-primary bi bi-clipboard2-data-fill"></span></div>
                                 Pengembalian
                             </a>
                         </div>

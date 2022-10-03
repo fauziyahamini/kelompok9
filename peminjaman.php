@@ -31,7 +31,7 @@ $sql2= mysqli_query($db,"SELECT * FROM peminjaman JOIN petugas ON peminjaman.id_
                     <form action="" enctype="multipart/form-data">
                     <table class="table table-striped table-bordered border border-2 border-dark table-hover mt-5">
                     <thead class="text-center">
-                        <tr>
+                        <tr class="bg-primary">
                             <th scope="col">No</th>
                             <th scope="col">Nama Siswa</th>
                             <th scope="col">Judul Buku</th>
@@ -55,7 +55,7 @@ $sql2= mysqli_query($db,"SELECT * FROM peminjaman JOIN petugas ON peminjaman.id_
                             <td class="align-middle"><?= ucwords($data2['nama']);?></td>
                             <td class="align-middle"><?= $data['tanggal_peminjaman'];?></td>
                             <td class="align-middle"><?= $data['tanggal_pengembalian'];?></td>
-                            <td class="align-middle"><a class="btn btn-sm btn-primary" href="pengembalian.php">Belum Kembali</a></td>
+                            <td class="align-middle text-danger fw-bold">Belum Kembali</td>
                         </tr>
                         <?php $i++; ?>
                         <?php } ?>

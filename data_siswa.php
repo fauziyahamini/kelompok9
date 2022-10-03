@@ -30,7 +30,7 @@ if(isset($_GET['cari'])){
                     <?php
                     if(isset($_POST['cari'])){
                         $cari = $_POST['ketik'];
-                        $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas  from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas where nama like '%".$cari."%' limit $halaman_awal, $batas" );    
+                        $ambil = mysqli_query($db,"SELECT *  from siswa inner join kelas on siswa.id_kelas = kelas.id_kelas where nama like '%".$cari."%'" );    
                     }
                         ?>
 
@@ -51,8 +51,6 @@ if(isset($_GET['cari'])){
                     <?php
                         $batas=5;
                         $halaman = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
-				        $halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;	
- 
 				        $previous = $halaman - 1;
 				        $next = $halaman + 1;
                         
@@ -66,9 +64,6 @@ if(isset($_GET['cari'])){
                         $awal_halaman=($batas*$halaman)-$batas;
 
                         $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas limit $awal_halaman, $batas");
-                        $nomor = $halaman_awal+1;
-                    
-                        
 
                         while ($data = mysqli_fetch_array($ambil)) {
                     ?>
