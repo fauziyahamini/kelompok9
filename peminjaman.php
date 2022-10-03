@@ -7,7 +7,6 @@ $sql = mysqli_query($db,"SELECT * FROM peminjaman JOIN detail_peminjaman ON pemi
                                                          JOIN petugas ON peminjaman.id_petugas = petugas.nip
                                                          JOIN siswa ON peminjaman.id_siswa = siswa.nis");
 $sql1 = mysqli_query($db,"SELECT * FROM detail_peminjaman JOIN buku ON detail_peminjaman.id_buku = buku.id_buku");
-$sql2 = mysqli_query($db,"SELECT * FROM kelas JOIN siswa ON kelas.id_kelas = siswa.id_kelas");
 ?>
 <main class="mb-5">
     <div class="container-fluid px-4">
@@ -35,7 +34,6 @@ $sql2 = mysqli_query($db,"SELECT * FROM kelas JOIN siswa ON kelas.id_kelas = sis
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama Siswa</th>
-                            <th scope="col">Kelas</th>
                             <th scope="col">Judul Buku</th>
                             <th scope="col">Penanggung Jawab</th>
                             <th scope="col">Tgl Pinjam</th>
@@ -48,12 +46,10 @@ $sql2 = mysqli_query($db,"SELECT * FROM kelas JOIN siswa ON kelas.id_kelas = sis
                                 $i = 1;
                                 while($data = mysqli_fetch_assoc($sql)){
                                     $data1 = mysqli_fetch_assoc($sql1);
-                                    $data2 = mysqli_fetch_assoc($sql2);
                             ?>
                         <tr class="text-center">
                             <td class="align-middle"><?= $i;?></td>
                             <td class="align-middle"><?= $data['nama'];?></td>
-                            <td class="align-middle"><?= $data2['nama_kelas'];?></td>
                             <td class="align-middle"><?= $data1['judul'];?></td>
                             <td class="align-middle"><?= $data['nip'];?></td>
                             <td class="align-middle"><?= $data['tanggal_peminjaman'];?></td>
