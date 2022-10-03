@@ -69,6 +69,14 @@ include "home_admin.php";
           $select = mysqli_query($db,"SELECT * FROM peminjaman ORDER BY id_peminjaman DESC");
           $data = mysqli_fetch_assoc($select);
             $tambah2 = mysqli_query($db,"INSERT INTO detail_peminjaman VALUES ('','$buku','$data[id_peminjaman]','$kuantitas')");
+            if($tambah2){
+              $a = 1;
+              $p_buku = mysqli_query($db,"SELECT stok FROM buku WHERE id_buku = $buku");
+              $f_buku = mysqli_fetch_assoc($p_buku);
+              $kurangi = $f_buku['stok'] - $a;
+              $stok = $kurangi;
+              $kurang = mysqli_query($db,"UPDATE buku SET stok = '$stok' WHERE id_buku = $buku");
+            }
             header('location:peminjaman.php');
           }  
       ?>

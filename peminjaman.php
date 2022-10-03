@@ -55,7 +55,7 @@ $sql2= mysqli_query($db,"SELECT * FROM peminjaman JOIN petugas ON peminjaman.id_
                             <td class="align-middle"><?= ucwords($data2['nama']);?></td>
                             <td class="align-middle"><?= $data['tanggal_peminjaman'];?></td>
                             <td class="align-middle"><?= $data['tanggal_pengembalian'];?></td>
-                            <td class="align-middle"><a class="btn btn-sm btn-primary" href="status.php">Belum Kembali</a></td>
+                            <td class="align-middle"><a class="btn btn-sm btn-primary" href="pengembalian.php">Belum Kembali</a></td>
                         </tr>
                         <?php $i++; ?>
                         <?php } ?>
