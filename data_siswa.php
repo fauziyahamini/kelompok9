@@ -14,18 +14,26 @@ if(isset($_GET['cari'])){
     <div class="container-fluid px-4">
     <h1 class="mt-4">Daftar Siswa</h1>   
                     <div class="container mt-5">
-                    <form action=" " method="GET">
+                    <form action=" " method="POST">
                     <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" name ="cari" placeholder="Cari Siswa" >
+                        <input type="text" class="form-control" name ="ketik" placeholder="Cari Siswa" >
                     </div>
                     <div class="col">
-                    <button id="search" type="submit" value="Cari" class="btn btn-warning">Cari</button>
+                    <button id="search" type="submit" name="cari" class="btn btn-warning">Cari</button>
                     <a href="add_siswa.php" class="btn btn-success">Tambah Siswa</a>
                     <!-- <button id="add" type="submit" value="add" class="btn btn-success">Tambah Buku</button> -->
                     </div>
                     </div>
                     </form>
+
+                    <?php
+                    if(isset($_POST['cari'])){
+                        $cari = $_POST['ketik'];
+                        $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas  from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas where nama like '%".$cari."%' limit $halaman_awal, $batas" );    
+                    }
+                        ?>
+
                     <form action="" enctype="multipart/form-data">
                     <table class="table table-striped table-hover mt-5">
                     <thead class="text-center">
@@ -47,21 +55,20 @@ if(isset($_GET['cari'])){
  
 				        $previous = $halaman - 1;
 				        $next = $halaman + 1;
-                        if(isset($_GET['cari'])){
-                        $cari = $_GET['cari'];
-                        $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas  from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas where nama like '%".$cari."%' limit $halaman_awal, $batas" );    
+                        
                         
 
-                        }else{
                         $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas");
                         
                         $jumlah_data = mysqli_num_rows($ambil);
 				        $total_halaman = ceil($jumlah_data / $batas);
+                        $halaman = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
+                        $awal_halaman=($batas*$halaman)-$batas;
 
-                        $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas limit $halaman_awal, $batas");
+                        $ambil = mysqli_query($db,"SELECT siswa.nis,siswa.nama,siswa.jenis_kelamin,siswa.alamat,kelas.nama_kelas from siswa inner join kelas on siswa.id_kelas=kelas.id_kelas limit $awal_halaman, $batas");
                         $nomor = $halaman_awal+1;
                     
-                        }
+                        
 
                         while ($data = mysqli_fetch_array($ambil)) {
                     ?>
