@@ -1,5 +1,9 @@
 <?php
-include ('config.php');?>
+include ('config.php');
+$id = $_SESSION['id'];
+$sql = mysqli_query($db,"SELECT * FROM petugas WHERE nip = $id");
+$name = mysqli_fetch_assoc($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,72 +17,51 @@ include ('config.php');?>
     <title>Document</title>
 </head>
 <body>
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary shadow">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Perpustakaan</a>
+            <a class="navbar-brand ps-3" href="index.html">Perpustakaan K-9</a>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto pe-5">
                 <li class="nav-item ms-auto">
-                    <a class="btn btn-secondary nav-link" id="navbarDropdown" href="index.php">Log Out <span class="bi-box-arrow-in-left"></span></a>
+                    <a class="btn btn-danger shadow text-white nav-link" id="navbarDropdown" href="logout.php">Log Out <span class="bi-box-arrow-in-left"></span></a>
                     
                 </li>
             </ul>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav"  style="background-color: #e3f2fd;" id="sidenavAccordion">
+                <nav class="sb-sidenav accordion sb-sidenav-light shadow-lg"  style="background-color: #bde2fc;" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="dashboard.php">
-                                <div class="sb-nav-link-icon"><span class="bi-speedometer2"></span></div>
+                            <a class="nav-link my-4" href="dashboard.php">
+                                <div class="sb-nav-link-icon"><span class="text-primary bi-speedometer2"></span></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link " href="data_buku.php" >
-                                <div class="sb-nav-link-icon"><span class="bi-journal-bookmark"></span></div>
+                            <a class="nav-link mb-4 " href="data_buku.php" >
+                                <div class="sb-nav-link-icon"><span class="text-primary bi-journal-bookmark"></span></div>
                                 Data Buku
                             </a>
-                            <a class="nav-link " href="data_siswa.php" >
-                                <div class="sb-nav-link-icon"><span class="bi-people-fill"></span></div>
+                            <a class="nav-link mb-4 " href="data_siswa.php" >
+                                <div class="sb-nav-link-icon"><span class="text-primary bi-people-fill"></span></div>
                                 Data Siswa
                             </a>
-                            <a class="nav-link " href="peminjaman.php" >
-                                <div class="sb-nav-link-icon"><span class="bi-table"></span></div>
+                            <a class="nav-link mb-4 " href="peminjaman.php" >
+                                <div class="sb-nav-link-icon"><span class="text-primary bi-table"></span></div>
                                 Peminjaman
                             </a>
-                            <a class="nav-link " href="pengembalian.php" >
-                                <div class="sb-nav-link-icon"><span class="bi-table"></span></div>
+                            <a class="nav-link mb-4 " href="pengembalian.php" >
+                                <div class="sb-nav-link-icon"><span class="text-primary bi-table"></span></div>
                                 Pengembalian
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    <div class="sb-sidenav-footer" style="background-color: #bde2fc;">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <?= ucwords( $name['nama']);?>
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <!-- <main>
-                    <div class="container-fluid px-4">
-                       
-                    </div>
-                    </div>
-                </main> -->
-                <!-- <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer> -->
-           
-     
-
 
 <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
 <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>

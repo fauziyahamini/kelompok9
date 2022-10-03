@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'config.php';
 include 'home_admin.php';
 
@@ -45,7 +46,9 @@ if(isset($_POST['update']))
     <title>Document</title>
 </head>
 <body>
-<div class="container mt-5">
+<main class="mb-5">
+  <div class="container-fluid">
+  <div class="container mt-5">
 <form action="" method="POST" enctype="multipart/form-data"> 
   <div class="mb-3">
     <label class="form-label">NIS</label>
@@ -88,6 +91,10 @@ if(isset($_POST['update']))
   <button type="submit" class="btn btn-primary" name="update">UPDATE</button>
 </form>
 </div>
+
+  </div>
+</main>
+<?php include "footer.php"; ?>
 
 <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
 <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>

@@ -7,9 +7,9 @@ $sql = mysqli_query($db,"SELECT * FROM peminjaman JOIN detail_peminjaman ON pemi
                                                          JOIN petugas ON peminjaman.id_petugas = petugas.nip
                                                          JOIN siswa ON peminjaman.id_siswa = siswa.nis");
 $sql1 = mysqli_query($db,"SELECT * FROM detail_peminjaman JOIN buku ON detail_peminjaman.id_buku = buku.id_buku");
-$sql2 = mysqli_query($db,"SELECT * FROM siswa JOIN kelas ON siswa.id_kelas = kelas.id_kelas");
+$sql2 = mysqli_query($db,"SELECT * FROM kelas JOIN siswa ON kelas.id_kelas = siswa.id_kelas");
 ?>
-<main>
+<main class="mb-5">
     <div class="container-fluid px-4">
     <h1 class="mt-4">Data Peminjam Buku Perpustakaan</h1>   
                     <div class="container mt-5">
@@ -67,5 +67,4 @@ $sql2 = mysqli_query($db,"SELECT * FROM siswa JOIN kelas ON siswa.id_kelas = kel
                     </form>
     </div>
 </main>
-</div>
-</div>
+<?php include "footer.php"; ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('config.php');
 include_once('home_admin.php');
 ?>
@@ -44,8 +45,13 @@ include_once('home_admin.php');
     <title>ADD</title>
 </head>
 <body>
+<<<<<<< HEAD
 <main>
   <div class="container-fluid px-5">
+=======
+<main class="mb-5">
+  <div class="container-fluid px-4">
+>>>>>>> 0e2b960115c0e9135ab9185bc9f82b08ef54ae44
   <div class="container mt-5">
    <form action="" method="POST" enctype="multipart/form-data"> 
 
@@ -132,8 +138,7 @@ include_once('home_admin.php');
 </main>
 
 
-</div>
-</div>
+<?php include "footer.php"; ?>
     <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
 </body>
