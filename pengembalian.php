@@ -34,7 +34,7 @@ $my1 = mysqli_query($db,"SELECT * FROM detail_peminjaman JOIN buku ON detail_pem
                             <th scope="col">No</th>
                             <th scope="col">Nama Siswa</th>
                             <th scope="col">Judul Buku</th>
-                            <th scope="col" colspan="2">Aksi</th>
+                            <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,10 +48,7 @@ $my1 = mysqli_query($db,"SELECT * FROM detail_peminjaman JOIN buku ON detail_pem
                             <td class="align-middle"><?= ucwords($data['nama']);?></td>
                             <td class="align-middle"><?= ucwords($data1['judul']);?></td>
                             <td class="align-middle">
-                                <a href="proses_kembali.php?id=<?= $data['id_peminjaman'];?>" class="btn btn-sm btn-danger">Belum Kembali</a>
-                            </td>
-                            <td class="align-middle">
-                                <a href="proses_kembali.php?id=<?= $data['id_peminjaman'];?>" class="btn btn-sm btn-primary">Sudah Kembali</a>
+                                <a href="proses_kembali.php?id=<?= $data['id_peminjaman'];?>" class="btn btn-sm btn-success">Kembalikan</a>
                             </td>
                         </tr>
                         <?php $i++; ?>

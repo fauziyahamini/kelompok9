@@ -3,13 +3,6 @@ session_start();
 include ('config.php');
 include ('home_admin.php');
 ?>
-
-<?php 
-if(isset($_GET['cari'])){
-	$cari = $_GET['cari'];
-	// echo "<b>Hasil pencarian : ".$cari."</b>";
-}
-?>
 <main class="mb-5">
     <div class="container-fluid px-4">
     <h1 class="mt-4">Daftar Siswa</h1>   

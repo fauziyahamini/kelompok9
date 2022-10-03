@@ -11,7 +11,7 @@ include "home_admin.php";
  $data_b = mysqli_fetch_assoc($book);
  $tgl = date('Y-m-d');
  $tgl1 = date_create($tgl);
- $tgl1 = date_add($tgl1,date_interval_create_from_date_string('14 days'));
+ $tgl1 = date_add($tgl1,date_interval_create_from_date_string('1 days'));
 ?>
 <main class="mb-5">
 
