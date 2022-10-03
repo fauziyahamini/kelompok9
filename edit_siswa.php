@@ -50,7 +50,10 @@ if(isset($_POST['update']))
   <div class="container-fluid">
   <div class="container mt-5">
 <form action="" method="POST" enctype="multipart/form-data"> 
-  <div class="mb-3">
+<div class="card mx-auto shadow-lg" style="width:50rem;">
+<div class="card-header">Update Data Siswa</div>
+<div class="card-body">
+<div class="mb-3">
     <label class="form-label">NIS</label>
     <input type="number" class="form-control" name="nis" value="<?php echo $_GET['id'];?>" placeholder="">
   </div>
@@ -61,9 +64,9 @@ if(isset($_POST['update']))
   <div class="mb-3">
     <label class="form-label">Jenis Kelamin</label>
     <br>
-    <input name="gender" type="radio" value="Laki-laki" <?php if($data['jenis_kelamin']=='Laki-laki') echo 'checked'?> 
+    <input name="gender" type="radio" value="L" <?php if($data['jenis_kelamin']=='L') echo 'checked'?> 
 > Laki-Laki
-        <input name="gender" type="radio" value="Perempuan"<?php if($data['jenis_kelamin']=='Perempuan') echo 'checked'?> 
+        <input name="gender" type="radio" value="P"<?php if($data['jenis_kelamin']=='P') echo 'checked'?> 
 > Perempuan
   </div>
   <div class="mb-3">
@@ -87,11 +90,13 @@ if(isset($_POST['update']))
           }?>          
     </select>
   </div>
- 
-  <button type="submit" class="btn btn-primary" name="update">UPDATE</button>
+</div>
+<div class="card-footer">
+<button type="submit" class="btn btn-primary" name="update">UPDATE</button>
+</div>
+</div>
 </form>
 </div>
-
   </div>
 </main>
 <?php include "footer.php"; ?>
