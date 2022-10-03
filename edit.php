@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'config.php';
 include 'home_admin.php';
 
@@ -55,18 +56,10 @@ if(isset($_POST['update']))
    
 
     ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <title>Document</title>
-</head>
-<body>
-<div class="container mt-5">
+
+<main class="mb-5">
+  <div class="container-fluid">
+  <div class="container mt-5">
 <form action="" method="POST" enctype="multipart/form-data"> 
   <div class="mb-3">
     <label class="form-label">ID Buku</label>
@@ -108,8 +101,7 @@ if(isset($_POST['update']))
   <button type="submit" class="btn btn-primary" name="update">UPDATE</button>
 </form>
 </div>
+  </div>
+</main>
 
-<script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
-</body>
-</html>
+<?php include "footer.php";?>

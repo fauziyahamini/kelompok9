@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('config.php');
 include ('home_admin.php');
 ?>
@@ -9,7 +10,7 @@ if(isset($_GET['cari'])){
 	// echo "<b>Hasil pencarian : ".$cari."</b>";
 }
 ?>
-<main>
+<main class="mb-5">
     <div class="container-fluid px-4">
     <h1 class="mt-4">Daftar Siswa</h1>   
                     <div class="container mt-5">
@@ -56,7 +57,14 @@ if(isset($_GET['cari'])){
                             <td><?= $data['nis']?></td>
                             <td><?= $data['nama']?></td>
                             <td>
-                            <?= $data['jenis_kelamin']?></td>
+                                <?php
+                                    if($data['jenis_kelamin']=='L'){
+                                        echo 'Laki-Laki';
+                                    }else{
+                                        echo "Perempuan";
+                                    }
+                                ?>
+                            </td>
                            
                             <td><?= $data['alamat']?></td>
                             <td><?= $data['nama_kelas']?></td>
@@ -71,21 +79,6 @@ if(isset($_GET['cari'])){
                     </tbody>
                     </table>
                     </form>
-
-                  
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
     </div>
 </main>
-</div>
-</div>
+<?php include "footer.php"; ?>

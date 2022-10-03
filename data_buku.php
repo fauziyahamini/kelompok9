@@ -1,9 +1,10 @@
 <?php
+session_start();
 include ('config.php');
 include ('home_admin.php');
 ?>
 <!-- <div id="layoutSidenav_content"> -->
-<main>
+<main class="mb-5">
     <div class="container-fluid px-4">
     <h1 class="mt-4">Daftar Buku</h1>   
                     <div class="container mt-5">
@@ -22,7 +23,7 @@ include ('home_admin.php');
                     <form action="" enctype="multipart/form-data">
                     <table class="table table-striped table-hover mt-5">
                     <thead class="text-center">
-                        <tr>
+                        <tr class="text-center">
                             <th scope="col">Id Buku</th>
                             <th scope="col">Penulis</th>
                             <th scope="col">Tahun</th>
@@ -49,17 +50,17 @@ include ('home_admin.php');
 
                         while ($data = mysqli_fetch_array($ambil)) {
                     ?>
-                        <tr>
-                            <td><?= $data['id_buku']?></td>
-                            <td><?= $data['penulis']?></td>
-                            <td><?= $data['tahun']?></td>
-                            <td><?= $data['judul']?></td>
-                            <td><?= $data['kota']?></td>
-                            <td><?= $data['penerbit']?></td>
-                            <td><img src="cover/<?= $data['cover']?>" alt="" style="width:50px;" class="img-thumbnail"></td>
-                            <td><?= $data['sinopsis']?></td>
-                            <td><?= $data['stok']?></td>
-                            <td >
+                        <tr class="text-center">
+                            <td class="align-middle"><?= $data['id_buku']?></td>
+                            <td class="align-middle"><?= $data['penulis']?></td>
+                            <td class="align-middle"><?= $data['tahun']?></td>
+                            <td class="align-middle"><?= $data['judul']?></td>
+                            <td class="align-middle"><?= $data['kota']?></td>
+                            <td class="align-middle"><?= $data['penerbit']?></td>
+                            <td class="align-middle"><img src="cover/<?= $data['cover']?>" alt="" style="width:50px;" class="img-thumbnail"></td>
+                            <td class="align-middle"><?= $data['sinopsis']?></td>
+                            <td class="align-middle"><?= $data['stok']?></td>
+                            <td class="align-middle" >
                         
                                 <a href="edit.php?id=<?php echo $data['id_buku'] ?>" class="btn btn-sm btn-primary">EDIT</a>
                                 <a href="delete.php?id=<?php echo $data['id_buku'] ?>" class="btn btn-sm btn-danger">HAPUS</a>
@@ -70,27 +71,10 @@ include ('home_admin.php');
                     </tbody>
                     </table>
                     </form>
-
-                  
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
     </div>
 </main>
-</div>
-</div>
-<!-- </div> -->
                     
-            
+            <?php include "footer.php"; ?>
             
 <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
 <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>

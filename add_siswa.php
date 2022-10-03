@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('config.php');
 include_once('home_admin.php');
 ?>
@@ -27,21 +28,11 @@ include_once('home_admin.php');
     }
     
     ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <title>ADD</title>
-</head>
-<body>
 
-  <div class="container-fluid px-4">
-  <div class="container mt-5">
-   <form action="" method="POST" enctype="multipart/form-data"> 
+  <main class="mb-5">
+  <div class="container-fluid px-4 mt-5">
+    <div class="container">
+    <form action="" method="POST" enctype="multipart/form-data"> 
   <h3 class="text-primary text-center">Form Tambah Siswa</h3>
   <div class="mb-3">
     <label class="form-label">NIS</label>
@@ -54,9 +45,9 @@ include_once('home_admin.php');
   <div class="mb-3">
     <label class="form-label">Jenis Kelamin</label>
     <br>
-    <input name="gender" type="radio" value="Laki-laki" required="required"
+    <input name="gender" type="radio" value="L" required="required"
 > Laki-Laki
-        <input name="gender" type="radio" value="Perempuan" required="required"
+        <input name="gender" type="radio" value="P" required="required"
 > Perempuan
   </div>
   <div class="mb-3">
@@ -82,17 +73,10 @@ include_once('home_admin.php');
   </div>
   <button type="submit" class="btn btn-primary" name="submit_siswa">Tambah Siswa</button>
 </form>
-   </div> 
-   
-
-    
-  </div>
+    </div>
+        </div>
+  </main>
 
 
 
-<!-- </div>
-</div> -->
-    <script src="bootstrap/js/bootstrap.min.css" type="text/javascript"></script>
-    <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
-</body>
-</html>
+  <?php include "footer.php"; ?>
