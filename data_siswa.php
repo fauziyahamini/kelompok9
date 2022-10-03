@@ -15,7 +15,6 @@ include ('home_admin.php');
                     <div class="col">
                     <button id="search" type="submit" name="cari" class="btn btn-warning">Cari</button>
                     <a href="add_siswa.php" class="btn btn-success">Tambah Siswa</a>
-                    <!-- <button id="add" type="submit" value="add" class="btn btn-success">Tambah Buku</button> -->
                     </div>
                     </div>
                     </form>

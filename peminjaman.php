@@ -55,7 +55,18 @@ $sql2= mysqli_query($db,"SELECT * FROM peminjaman JOIN petugas ON peminjaman.id_
                             <td class="align-middle"><?= ucwords($data2['nama']);?></td>
                             <td class="align-middle"><?= $data['tanggal_peminjaman'];?></td>
                             <td class="align-middle"><?= $data['tanggal_pengembalian'];?></td>
-                            <td class="align-middle text-danger fw-bold">Belum Kembali</td>
+                            <?php
+                                if($data['status']=='Belum Kembali'){
+                                    ?>
+                                        <td class="align-middle text-danger fw-bold"><?= $data['status'];?></td>
+                                    <?php
+                                }else{
+                                    ?>
+                                        <td class="align-middle text-success fw-bold"><?= $data['status'];?></td>
+                                    <?php
+                                }
+                            ?>
+                            
                         </tr>
                         <?php $i++; ?>
                         <?php } ?>

@@ -68,7 +68,7 @@ include "home_admin.php";
           $tambah = mysqli_query($db,"INSERT INTO peminjaman VALUES('','$siswa','$petugas','$tanggal','$tanggal1')");
           $select = mysqli_query($db,"SELECT * FROM peminjaman ORDER BY id_peminjaman DESC");
           $data = mysqli_fetch_assoc($select);
-            $tambah2 = mysqli_query($db,"INSERT INTO detail_peminjaman VALUES ('','$buku','$data[id_peminjaman]','$kuantitas')");
+            $tambah2 = mysqli_query($db,"INSERT INTO detail_peminjaman VALUES ('','$buku','$data[id_peminjaman]','$kuantitas','Belum Kembali')");
             if($tambah2){
               $a = 1;
               $p_buku = mysqli_query($db,"SELECT stok FROM buku WHERE id_buku = $buku");
