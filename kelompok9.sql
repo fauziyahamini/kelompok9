@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.3.0-dev+20220928.000bf397a4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Okt 2022 pada 16.08
+-- Waktu pembuatan: 03 Okt 2022 pada 19.02
 -- Versi server: 10.4.24-MariaDB
--- Versi PHP: 8.1.6
+-- Versi PHP: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,25 +77,28 @@ CREATE TABLE `detail_peminjaman` (
   `id_detail_peminjaman` int(11) NOT NULL,
   `id_buku` int(11) NOT NULL,
   `id_peminjaman` int(11) NOT NULL,
-  `kuantitas` int(11) DEFAULT NULL
+  `kuantitas` int(11) DEFAULT NULL,
+  `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `detail_peminjaman`
 --
 
-INSERT INTO `detail_peminjaman` (`id_detail_peminjaman`, `id_buku`, `id_peminjaman`, `kuantitas`) VALUES
-(4, 32, 7, 1),
-(6, 32413, 9, 1),
-(7, 32413, 10, 1),
-(8, 32443, 11, 1),
-(9, 322413, 12, 1),
-(13, 32, 16, 1),
-(14, 32443, 17, 1),
-(15, 324, 18, 1),
-(16, 32443, 19, 1),
-(17, 322413, 20, 1),
-(18, 324, 21, 1);
+INSERT INTO `detail_peminjaman` (`id_detail_peminjaman`, `id_buku`, `id_peminjaman`, `kuantitas`, `status`) VALUES
+(4, 32, 7, 1, 'Sudah Kembali'),
+(6, 32413, 9, 1, 'Belum Kembali'),
+(7, 32413, 10, 1, 'Belum Kembali'),
+(8, 32443, 11, 1, 'Belum Kembali'),
+(9, 322413, 12, 1, 'Belum Kembali'),
+(13, 32, 16, 1, 'Belum Kembali'),
+(14, 32443, 17, 1, 'Belum Kembali'),
+(15, 324, 18, 1, 'Belum Kembali'),
+(16, 32443, 19, 1, 'Belum Kembali'),
+(17, 322413, 20, 1, 'Belum Kembali'),
+(18, 324, 21, 1, 'Belum Kembali'),
+(19, 32, 22, 1, 'Sudah Kembali'),
+(20, 32, 23, 1, 'Sudah Kembali');
 
 -- --------------------------------------------------------
 
@@ -109,6 +112,23 @@ CREATE TABLE `detail_pengembalian` (
   `ada` int(11) DEFAULT NULL,
   `hilang` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `detail_pengembalian`
+--
+
+INSERT INTO `detail_pengembalian` (`id_detail_pengembalian`, `id_pengembalian`, `ada`, `hilang`) VALUES
+(2, 5, 1, 0),
+(3, 6, 1, 0),
+(4, 7, 1, 0),
+(5, 8, 1, 0),
+(6, 9, 1, 0),
+(7, 10, 1, 0),
+(8, 11, 1, 0),
+(9, 12, 1, 0),
+(10, 13, 1, 0),
+(11, 14, 1, 0),
+(12, 15, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -162,7 +182,9 @@ INSERT INTO `peminjaman` (`id_peminjaman`, `id_siswa`, `id_petugas`, `tanggal_pe
 (18, 2323323, 7, '2022-10-03', '2022-10-17'),
 (19, 2323323, 1, '2022-10-03', '2022-10-17'),
 (20, 2323323, 1, '2022-10-03', '2022-10-17'),
-(21, 3214234, 1, '2022-10-03', '2022-10-17');
+(21, 3214234, 1, '2022-10-03', '2022-10-17'),
+(22, 16650113, 1, '2022-10-03', '2022-10-04'),
+(23, 16650114, 1, '2022-10-03', '2022-10-04');
 
 -- --------------------------------------------------------
 
@@ -176,6 +198,23 @@ CREATE TABLE `pengembalian` (
   `tanggal_pengembalian` date DEFAULT NULL,
   `denda` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pengembalian`
+--
+
+INSERT INTO `pengembalian` (`id_pengembalian`, `id_peminjaman`, `tanggal_pengembalian`, `denda`) VALUES
+(5, 7, '2022-10-03', 0),
+(6, 7, '2022-10-03', 0),
+(7, 7, '2022-10-03', 0),
+(8, 7, '2022-10-03', 0),
+(9, 7, '2022-10-03', 0),
+(10, 7, '2022-10-03', 0),
+(11, 7, '2022-10-03', 0),
+(12, 22, '2022-10-03', 0),
+(13, 22, '2022-10-03', 0),
+(14, 22, '2022-10-03', 0),
+(15, 23, '2022-10-03', 0);
 
 -- --------------------------------------------------------
 
@@ -285,7 +324,7 @@ ALTER TABLE `detail_peminjaman`
 --
 ALTER TABLE `detail_pengembalian`
   ADD PRIMARY KEY (`id_detail_pengembalian`),
-  ADD KEY `id_pengembalian` (`id_pengembalian`);
+  ADD KEY `fb_pengembalian` (`id_pengembalian`);
 
 --
 -- Indeks untuk tabel `kelas`
@@ -306,7 +345,7 @@ ALTER TABLE `peminjaman`
 --
 ALTER TABLE `pengembalian`
   ADD PRIMARY KEY (`id_pengembalian`),
-  ADD KEY `fk_peminjaman` (`id_peminjaman`);
+  ADD KEY `fk_pinjam` (`id_peminjaman`);
 
 --
 -- Indeks untuk tabel `petugas`
@@ -335,13 +374,13 @@ ALTER TABLE `userr`
 -- AUTO_INCREMENT untuk tabel `detail_peminjaman`
 --
 ALTER TABLE `detail_peminjaman`
-  MODIFY `id_detail_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_detail_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_pengembalian`
 --
 ALTER TABLE `detail_pengembalian`
-  MODIFY `id_detail_pengembalian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detail_pengembalian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas`
@@ -353,7 +392,13 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT untuk tabel `pengembalian`
+--
+ALTER TABLE `pengembalian`
+  MODIFY `id_pengembalian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `petugas`
@@ -382,7 +427,7 @@ ALTER TABLE `detail_peminjaman`
 -- Ketidakleluasaan untuk tabel `detail_pengembalian`
 --
 ALTER TABLE `detail_pengembalian`
-  ADD CONSTRAINT `detail_pengembalian_ibfk_1` FOREIGN KEY (`id_pengembalian`) REFERENCES `pengembalian` (`id_pengembalian`);
+  ADD CONSTRAINT `fb_pengembalian` FOREIGN KEY (`id_pengembalian`) REFERENCES `pengembalian` (`id_pengembalian`);
 
 --
 -- Ketidakleluasaan untuk tabel `peminjaman`
@@ -395,7 +440,7 @@ ALTER TABLE `peminjaman`
 -- Ketidakleluasaan untuk tabel `pengembalian`
 --
 ALTER TABLE `pengembalian`
-  ADD CONSTRAINT `fk_peminjaman` FOREIGN KEY (`id_peminjaman`) REFERENCES `peminjaman` (`id_peminjaman`);
+  ADD CONSTRAINT `fk_pinjam` FOREIGN KEY (`id_peminjaman`) REFERENCES `peminjaman` (`id_peminjaman`);
 
 --
 -- Ketidakleluasaan untuk tabel `siswa`
