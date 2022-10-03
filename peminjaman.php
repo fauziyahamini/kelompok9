@@ -4,9 +4,9 @@ $id = $_SESSION['id'];
 include "config.php";
 include "home_admin.php";
 $sql = mysqli_query($db,"SELECT * FROM peminjaman JOIN detail_peminjaman ON peminjaman.id_peminjaman = detail_peminjaman.id_peminjaman
-                                                         JOIN petugas ON peminjaman.id_petugas = petugas.nip
                                                          JOIN siswa ON peminjaman.id_siswa = siswa.nis");
 $sql1 = mysqli_query($db,"SELECT * FROM detail_peminjaman JOIN buku ON detail_peminjaman.id_buku = buku.id_buku");
+$sql2= mysqli_query($db,"SELECT * FROM peminjaman JOIN petugas ON peminjaman.id_petugas = petugas.nip");
 ?>
 <main class="mb-5">
     <div class="container-fluid px-4">
@@ -46,12 +46,13 @@ $sql1 = mysqli_query($db,"SELECT * FROM detail_peminjaman JOIN buku ON detail_pe
                                 $i = 1;
                                 while($data = mysqli_fetch_assoc($sql)){
                                     $data1 = mysqli_fetch_assoc($sql1);
+                                    $data2 = mysqli_fetch_assoc($sql2);
                             ?>
                         <tr class="text-center">
                             <td class="align-middle"><?= $i;?></td>
-                            <td class="align-middle"><?= $data['nama'];?></td>
-                            <td class="align-middle"><?= $data1['judul'];?></td>
-                            <td class="align-middle"><?= $data['nip'];?></td>
+                            <td class="align-middle"><?= ucwords($data['nama']);?></td>
+                            <td class="align-middle"><?= ucwords($data1['judul']);?></td>
+                            <td class="align-middle"><?= ucwords($data2['nama']);?></td>
                             <td class="align-middle"><?= $data['tanggal_peminjaman'];?></td>
                             <td class="align-middle"><?= $data['tanggal_pengembalian'];?></td>
                             <td class="align-middle"><a class="btn btn-sm btn-primary" href="status.php">Belum Kembali</a></td>
